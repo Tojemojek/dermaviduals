@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/img/jako_logo_wek.svg"
+          rel="icon"
+          type="image/svg">
+    <title>Pogadanka o internecie</title>
+
+    <meta content="O czym każdy kto prowadzi biznes z internecie wiedzieć powinien (nawet jeśli uważa inaczej)"
+          name="description">
+    <meta content="Krzysztof Ostrowski" name="author">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+
+
+    <link href="dist/reset.css" rel="stylesheet">
+    <link href="dist/reveal.css" rel="stylesheet">
+    <link href="dist/theme/black.css" id="theme" rel="stylesheet">
+    <!-- Theme used for syntax highlighting of code -->
+    <link href="plugin/highlight/monokai.css" id="highlight-theme" rel="stylesheet">
+
+    <link href="css/ko.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="reveal">
+    <img alt="JaKO logo" src="assets/img/jako_logo_wek.svg">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section class="startowa">
+            <h3>Wielke rzeczy wymagają sporej wiedzy</h3>
+
+            <img alt="JaKO logo" src="assets/img/jako_logo_wek.svg">
+            <a href="https://zdrowy-styl.pl">
+                <img alt="Zdrowy Styl logo" src="assets/img/zdrowy-logo.webp">
+            </a>
+            <a href="https://dlakosmetologow.pl">
+                <img alt="Dla Kosmetologów logo" src="assets/img/dla_logo.webp">
+            </a>
+            <a href="https://derma.kostrowski.pl">
+                <img alt="Dermaviduals logo" src="assets/img/derma_logo.webp">
+            </a>
+            <p>Czyli troszkę informacji o internecie i tym jak robić strony żeby były (ciut) lepsze</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Ogólne pojęcia (nuuuuuuuda)</h2>
+                <h3>ale dzięki nim się łatwiej rozmawia</h3>
+                <ul>
+                    <li><a href="#html">html / css / JavaScript</a></li>
+                    <li><a href="#tagihtml">Tagi Html</a></li>
+                    <li><a href="#pseudoklasy">"Pseudoklasy" i "Akcje" css / js</a></li>
+                    <li><a href="#httphttps">http / https</a></li>
+                    <li><a href="#dns">DNS i routing</a></li>
+                    <li><a href="#TTFB">TTFB oraz Bity a Bajty</a></li>
+                </ul>
+            </section>
+            <section id="html">
+                <h3>html (HyperText Markup Language)</h3>
+                <p>Grupa znaczników w tekście, która opisuje strukturę treści.</p>
+                <h3>css (Cascading Style Sheets)</h3>
+                <p>(Prawie) Wszystko co odpowiada za to jak strona wygląda</p>
+                <h3>JavaScript</h3>
+                <p>Język programowania, który dodaje efekty / interaktywność na stronie</p>
+            </section>
+            <section id="tagihtml">
+                <h3>Tagi HTML</h3>
+                <p>(Prawie)Każdy znacznik składa się z tagu otwierającego, treści i zamykającego
+                <p>
+                    <code>&lt;nazwa&gt; ZAWARTOŚĆ &lt;/nazwa&gt; </code>
+                <p>Część znaczników może zawierać się w innych </p>
+                <code>&lt;h3&gt;Tagi &lt;small&gt;HTML&lt;/small&gt;&lt;/h3&gt;</code>
+            </section>
+            <section>
+                <h3>Tagi <small>HTML</small></h3>
+                <p>Jest kilka grup tych znaczników - takie które "tworzą bloki" i takie które nadają kontekst temu co
+                    jest w środku</p>
+                <p>Te nadające kontekst są znacznie ważniejsze - dzięki nim wiadomo o co na stronie chodzi (i dodatkowo
+                    mają bardzo duże znaczenie przy pozycjonowaniu)</p>
+                <p>Najważniejsze</p>
+                <ul>
+                    <li>&lt;h1&gt; do &lt;h6&gt;</li>
+                    <li>&lt;p&gt; &lt;div&gt; &lt;span&gt;</li>
+                    <li>&lt;img&gt; &lt;a&gt;</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Tagi HTML</h3>
+                <a href="podstawa.html">Super Podstawowa Strona Internetowa</a>
+            </section>
+            <section id="pseudoklasy">
+                <h3>"Pseudoklasy" i "Akcje" css / js</h3>
+                <p>Najpopularniejsze to</p>
+                <ul>
+                    <li>najechanie myszką</li>
+                    <li>"odwiedzony"</li>
+                    <li>zmiana rozmiaru okna</li>
+                    <li>scroll</li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="https://www.kurshtml.edu.pl/css/co_to_sa_pseudoklasy,pseudoklasy.html" id="myhoover"
+                           target="_blank">Poza
+                            samymi znacznikami
+                            warto wiedzieć, że istnieją "zdarzenia" na które można reagować</a>
+                    </li>
+                    <li>
+                        <a href="#" id="myhooverdwa">Wolny fade</a>
+                    </li>
+                    <li>
+                        <a href="https://zdrowy-styl.pl" id="myhoovertrzy" target="_blank">Natychmiastowa zmiana +
+                            niebieski po
+                            odwiedzeniu</a>
+                    </li>
+                </ul>
+            </section>
+            <section id="domena">
+                <h3>Domena, subdomena, www</h3>
+                <p>W uproszczeniu - jednoznaczna identyfikacja adresu internetowego</p>
+                <p>Właściwie każdy (działający) adres internetowy jest poddomeną - istnieje coś takiego jak domeny
+                    najwyższego poziomu np. .pl, .com, .gov</p>
+                <p>Każdy adres taki jak zdrowy-styl.pl jest poddomeną - jego właściciel może tworzyć poddomeny kolejnego
+                    poziomu - np. blog.zdrowy-styl.pl</p>
+            </section>
+            <section>
+                <h3>Domena, subdomena, www</h3>
+                <p>Dawno, dawno temu (czyli kiedy byłem w liceum, a wy na chleb wołałyście `pep`) każda domena miała
+                    poddomenę www (np. www.zdrowy-styl.pl) i tylko tam można było obejrzeć stronę internetową </p>
+                <p>Całe szczęście świat poszedł naprzód i nie jest to niezbędne ale dla większości dostawców <br/>
+                    www.zdrowy-styl.pl = zdrowy-styl.pl <br/><strong>ALE TO TYLKO DOBRA PRAKTYKA A NIE
+                        OBOWIĄZEK!</strong></p>
+            </section>
+            <section>
+                <h3>Certyfikaty bezpieczeństwa</h3>
+                <p>Z domeną wiążą się certyfikaty - są one wydawane</p>
+                <ul>
+                    <li>
+                        dla domeny (i najczęściej subdomeny www.)
+                    </li>
+                    <li>
+                        dla wielu domen równocześnie (np. blog.zdrowy-styl.pl i zdrowy-styl.pl)
+                    </li>
+                    <li>
+                        "wildcard" czyli dla wszystkich bezpośrednich subdomen poczta.zdrowy-styl.pl,
+                        blog.zdrowy-styl.pl, sklep.zdrowy-styl.pl<br/>
+                        <strong>obejmują jeden poziom głębokości! np. rehabilitacja.sklep.zdrowy-styl.pl nie będzie
+                            oznaczony jako chroniony!</strong>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Certyfikaty bezpieczeństwa</h3>
+                <p>Są różne typy "wiarygodności" certyfikatów</p>
+                <ul>
+                    <li>
+                        Domain Validation (DV) - sprawdzenie czy strona zdrowy-styl.pl faktycznie jest dostępna jako
+                        zdrowy-styl.pl
+                    </li>
+                    <li>
+                        Organization Validation (OV) - sprawdzenie czy właściciel domeny istnieje, ma do niej prawa, np.
+                        przez wyciągi z krs
+                    </li>
+                    <li>
+                        Extended Validation (EV) - szczegółowa weryfikacja że dany podmiot istnieje, ma siedzibę,
+                        odpowiedni status prawny itp
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Certyfikaty bezpieczeństwa</h3>
+                <p>Są różne typy "wiarygodności" certyfikatów</p>
+                <div>
+                    <img src="assets/img/cert_dv.png">
+                    <img src="assets/img/cert_ov.png">
+                    <div style="display: flex">
+                        <img src="assets/img/cert_ev1.png" style="height: 100%; margin: 1rem">
+                        <img src="assets/img/cert_ev2.png" style="height: 100%">
+                    </div>
+                </div>
+            </section>
+            <section id="httphttps">
+                <h3>Htpp / Https</h3>
+                <p>W największym uproszczeniu - sposoby przekazywania danych</p>
+                <p>http:// jest (jeszcze) domyślny i nieszyfrowany</p>
+                <p>https:// jest szyfrowany (co przy spełnieniu kilku warunków oznacza, że bezpieczny)</p>
+                <ul>
+                    <li>klucz certyfikatu nie może być wykradziony</li>
+                    <li>certyfikat musi być ważny</li>
+                    <li>dns nie może być zmanipulowany</li>
+                    <li>nie możemy mieć innego root certyfikatu i trojana na komputerze</li>
+                </ul>
+            </section>
+            <section id="dns">
+                <h3>DNS i Routing</h3>
+                <p>DNS to książka adresowa - tłumaczy adres zdrowy-styl.pl na IP - 194.181.228.55 (ale ponieważ akurat
+                    ten serwis korzysta z hostingu współdzielonego, to wpisanie go w przeglądarkę nic nie da) <br/>ale
+                    google.pl na IP - 216.58.208.195 to już można spróbować</p>
+
+            </section>
+            <section>
+                <h3>DNS i Routing</h3>
+                <p>Routing to sposób wybierania trasy do celu - żeby dane od nas i do nas mogły krążyć dostawcy
+                    internetu wymieniają się danymi - sposób wyboru optymalnej (NIE NAJKRÓTSZEJ) trasy to właśnie
+                    routing. W internecie praktycznie nigdy nie ma gwarancji jaką ścieżką pójdą pakiety danych.</p>
+            </section>
+            <section id="TTFB">
+                <h3>TTFB, Bity i Bajty</h3>
+                <p>Time To First Byte - Czyli po ilu (mili)sekundach otrzymamy odpowiedź na nasze pytanie</p>
+                <p>1 Bajt = 8 bitów</p>
+                <p>KB - to kiloBajt (duże B więc większa jednostka), kb to kilobit (mniejsza jednostka, mniejsze b</p>
+                <p>Wielkość plików jest w Bajtach (kilo, mega, giga), szybkość transferu w bitach (kilo, mega, giga)</p>
+                <p>Plik 100MB na łączu 100Mb/s będzie się ściągał 8s (tak naprawdę to ponad 10s)</p>
+            </section>
+            <section>
+                <h3>Bonus - matematyka</h3>
+                <p>Czemu kupując dysk 500MB wcale nie ma 500MB w komputerze?</p>
+                <p>Bo kupujesz dysk w MegaBajtach metrycznych <br>(1 MB = 1000 000b)<br/> a komputer liczy w MegaBajtach
+                    "dwójkowych" <br>(1 MB = 1048 576b (1024 * 1024 czyli 2<small>10</small> * 2<small>10</small>)) </p>
+                <p>No i z 500MB zostaje 476,83MB... to się nazywa kłamstwo lub <strong>marketing</strong></p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Jak Działa Internet?</h2>
+                <h3>A przynajmniej - co się dzieje jak wpiszesz adres w przeglądarkę</h3>
+                <h3>I czemu niektóre strony działają szybciej od innych</h3>
+            </section>
+            <section>
+                <h3>Wpisanie adresu w przeglądarkę</h3>
+                <ul>
+                    <li>DNS -> zdrowy-styl.pl -> 194.181.228.55</li>
+                    <li>Żądanie typu GET jest wysyłane na odpowiednie IP</li>
+                    <li>Routing</li>
+                    <li>Routing na serwerze współdzielonym</li>
+                    <li>Aplikacja wordpress na serwerze analizuje zapytanie</li>
+                    <li>Aplikacja przygotowuje odpowiedź ("skleja" html, css, js)</li>
+                    <li>Serwer odpowiada</li>
+                    <li>Routing danych do nas</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Wpisanie adresu w przeglądarkę</h3>
+                <ul>
+                    <li>Przeglądarka analizuje kod HTML i wysyła kolejne prośby o zasoby (np. obrazki, zewnętrzne
+                        skrypty takie jak mailerlite)
+                    </li>
+                    <li>Serwer odpowiada do znudzenia</li>
+                    <li>Przeglądarka generuje stronę (generuje ją wcześniej o ile nie ma zasobów "blokujących" w
+                        kolejce, sukcesywnie doczytując zasoby "nieblokujące")
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Co wpływa na szybkość działania i ładowania strony</h3>
+                <p>(kolejność subiektywna)</p>
+                <ul>
+                    <li>Prędkość internetu</li>
+                    <li>To czy strona jest statyczna / dynamiczna</li>
+                    <li>To jak strona jest napisana (wordpress + wiele pluginów = wolno, bardzo wolno lub tragicznie
+                        wolno)
+                    </li>
+                    <li>"Moc" serwera</li>
+                    <li>Ilość danych na stronie [duże obrazki = wolno]</li>
+                    <li>Szyfrowanie danych</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Co wpływa na szybkość działania i ładowania strony</h3>
+                <ul>
+                    <li>Zewnętrzne skrypty</li>
+                    <li>Duża ilość skryptów</li>
+                    <li>Odległość geograficzna od serwera</li>
+                    <li>Cache lokalne / serwera</li>
+                </ul>
+                <p>Cache w dużym uproszczeniu - co jakiś czas na serwerze generowana jest strona np.
+                    "https://dlakosmetologow.pl/o-mnie/"</p>
+                <p>Jeśli w czasie mniejszym niż TTL ktoś zapyta to serwer omija generowanie PHP i od razu daje gotowe
+                    zasoby</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Kto i jak przegląda internet</h3>
+                <img alt="Prezentacja IT bez kotów?!?" src="assets/img/koty.jpg">
+            </section>
+            <section>
+                <h3>Jak przegląda się internet</h3>
+                <a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/poland" target="_blank">Platformy</a><br/>
+                <a href="https://www.broadbandsearch.net/blog/mobile-desktop-internet-usage-statistics" target="_blank">Zmiany
+                    w czasie</a><br/>
+                <a href="https://www.gemius.pl/wszystkie-artykuly-aktualnosci/raport-e-commerce.html" target="_blank">E-commerce
+                    w Polsce</a><br/>
+            </section>
+            <section>
+                <h3>Czym przegląda się internet</h3>
+                <a href="https://pl.wikipedia.org/wiki/Udzia%C5%82_przegl%C4%85darek_internetowych_w_rynku"
+                   target="_blank">Przeglądarki Wikipedia</a>
+                <a href="http://ranking.gemius.com/pl/ranking/browsers/" target="_blank">Przeglądarki Gemius</a>
+            </section>
+            <section>
+                <h3>Czym się szuka w internecie</h3>
+                <a href="https://gfields.pl/ranking-wyszukiwarek-2019-2020/">Ranking przeglądarek</a>
+                <p>Spoiler - google a potem NAPRAWDĘ długo nic</p>
+                <p>Ja polecam dodatkowo:</p>
+                <ul>
+                    <li>bing.com</li>
+                    <li>duckduckgo.com/</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Jakie szerokości ekranu są więc ważne?</h3>
+                <div style="background: red; width: 1140px">1140px</div>
+                <div style="background: green; width: 960px">960px</div>
+                <div style="background: blue; width: 720px">720px</div>
+                <div style="background: violet; width: 540px">540px</div>
+                <div style="background: white; color:black; width: 280px">węższe</div>
+            </section>
+        </section>
+
+
+        <section>
+            <section>
+                <h2>Jak analizować co jest nie tak?</h2>
+            </section>
+            <section id="narzedzia">
+                <h3>Narzędzia</h3>
+                <ul>
+                    <li>Dev Tools w Chrome</li>
+                    <li>Dev Tools w Firefox</li>
+                    <li><a href="https://validator.w3.org/" target="_blank">w3.org</a></li>
+                    <li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">google</a></li>
+                    <li><a href="https://gtmetrix.com" target="_blank">gtmetrix.com</a></li>
+                    <li> <a href="https://tools.pingdom.com/">tools.pingdom.com/</a></li>
+                </ul>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/zoom/zoom.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/search/search.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        slideNumber: true,
+        hashOneBasedIndex: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+    });
+
+</script>
+
+</body>
+</html>

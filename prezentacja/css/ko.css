@@ -1,0 +1,42 @@
+.startowa img {
+    height: 8rem;
+    background-color: #ffffff;
+    border-radius: 50% 50%;
+    margin: 2rem
+}
+
+.startowa img:hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+}
+
+#myhoover{
+    color: green;
+    transition: 1s;
+}
+
+#myhoover:hover {
+    color: red;
+}
+
+#myhooverdwa {
+    color: green;
+    transition: 3s;
+}
+
+#myhooverdwa:hover {
+    color: red;
+}
+
+
+#myhoovertrzy {
+    color: green;
+}
+
+#myhoovertrzy:hover {
+    color: red;
+}
+
+#myhoovertrzy:visited {
+    color: blue;
+}
